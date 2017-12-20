@@ -16,7 +16,7 @@ const createCachable = () => {
     }
     else {
       console.log('Calculating result');
-      let result = getSquareRoot;
+      let result = Math.sqrt(n);
       cache[n] = result;
       return result;
     }
@@ -24,4 +24,5 @@ const createCachable = () => {
 }
 var cached = createCachable(getSquareRoot);
 // returned function from memoizedAdd
+cached(4);
 cached(4);
