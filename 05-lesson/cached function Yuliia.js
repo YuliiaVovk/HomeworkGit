@@ -6,7 +6,8 @@ function getSquareRoot(a) {
 var getSquareRoot = (n) => Math.sqrt(n); 
 getSquareRoot(9);
 // a simple memoized function to add something
-const cached = (n) => {
+
+const createCachable = () => {
   let cache = {};
   return (n) => {
     if (n in cache) {
@@ -15,11 +16,12 @@ const cached = (n) => {
     }
     else {
       console.log('Calculating result');
-      let result = Math.sqrt(n);
+      let result = getSquareRoot;
       cache[n] = result;
       return result;
     }
   }
 }
+var cached = createCachable(getSquareRoot);
 // returned function from memoizedAdd
 cached(4);
