@@ -7,7 +7,7 @@ var getSquareRoot = (n) => Math.sqrt(n);
 getSquareRoot(9);
 // a simple memoized function to add something
 
-const createCachable = () => {
+const createCachable = (getSquareRoot) => {
   let cache = {};
   return (n) => {
     if (n in cache) {
